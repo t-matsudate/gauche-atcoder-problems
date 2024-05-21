@@ -1,5 +1,4 @@
 run = "gosh ./main.scm"
-entrypoint = "README.md"
 
 [nix]
 channel = "stable-23_11"
