@@ -2,18 +2,18 @@
   (export abc353a))
 (select-module abc353a)
 
-(define (find-higher hs)
-  (define (go ret head hs)
-    (if (null? hs)
+(define (find-higher buildings)
+  (define (go ret first buildings)
+    (if (null? buildings)
         -1
-        (if (< head (car hs))
+        (if (< first (car buildings))
             ret
-            (go (+ ret 1) head (cdr hs)))))
-  (go 2 (car hs) (cdr hs)))
+            (go (+ ret 1) first (cdr buildings)))))
+  (go 2 (car buildings) (cdr buildings)))
 
 (define (abc353a)
   (let ((n (string->number (read-line (current-input-port))))
-        (hs (map string->number
-                (string-split (read-line (current-input-port))
-                              " "))))
-    (print (find-higher hs))))
+        (buildings (map string->number
+                        (string-split (read-line (current-input-port))
+                                      " "))))
+    (print (find-higher buildings))))
