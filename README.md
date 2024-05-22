@@ -1,8 +1,13 @@
 # Gauche で AtCoder の問題を解く
 
-1. ABC353
-2. ABC352
-3. ABC351
+1. ABC354
+2. ABC353
+3. ABC352
+4. ABC351
+
+## ABC354
+
+- [x] A 問題(ビットの数え上げ)
 
 ## ABC353
 
