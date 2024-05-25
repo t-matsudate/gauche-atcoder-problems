@@ -1,12 +1,17 @@
 # Gauche で AtCoder の問題を解く
 
-1. ABC354
-2. ABC353
-3. ABC352
-4. ABC351
-5. ABC350
-6. ABC349
-7. ABC348
+1. ABC355
+2. ABC354
+3. ABC353
+4. ABC352
+5. ABC351
+6. ABC350
+7. ABC349
+8. ABC348
+
+## ABC355
+
+- [x] A 問題(指定要素の排除)
 
 ## ABC354
 
