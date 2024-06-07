@@ -17,6 +17,7 @@
 15. ABC341
 16. ABC340
 17. ABC339
+18. ABC338
 
 ## ABC355
 
@@ -85,3 +86,7 @@
 ## ABC339
 
 - [x] A 問題(TLDの抽出)
+
+## ABC338
+
+- [x] A 問題(Capital case)
