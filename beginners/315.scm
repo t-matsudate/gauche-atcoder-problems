@@ -1,0 +1,25 @@
+(define-module beginners.315
+  (export abc315))
+(select-module beginners.315)
+
+(define (vowel? c)
+  (or (equal? #\a c)
+      (equal? #\e c)
+      (equal? #\i c)
+      (equal? #\o c)
+      (equal? #\u c)))
+
+(define (remove-vowels line)
+  (define len (string-length line))
+  (define (go index line)
+    (if (>= index len)
+        '()
+        (let ((c (string-ref line index)))
+          (if (vowel? c)
+              (go (+ index 1) line)
+              (cons c (go (+ index 1) line))))))
+  (go 0 line))
+
+(define (abc315)
+  (let ((line (read-line (current-input-port))))
+    (print (list->string (remove-vowels line)))))
