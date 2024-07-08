@@ -1,5 +1,6 @@
 (define-module beginners.360
-  (export abc360a))
+  (export abc360a
+          abc360b))
 (select-module beginners.360)
 
 (define (rice-before-miso? menu)
@@ -10,5 +11,31 @@
 (define (abc360a)
   (let ((line (read-line (current-input-port))))
     (if (rice-before-miso? line)
+        (print "Yes")
+        (print "No"))))
+
+(define (make-vertical-substrings str)
+  (define len (string-length str))
+  (define (make-vertical-substring str interval index)
+    (if (>= index len)
+        '()
+        (cons (string-ref str index)
+              (make-vertical-substring str interval (+ index interval)))))
+  (define (go str interval start)
+    (cond ((>= interval (- len 1)) '())
+          ((>= start interval) (go str (+ interval 1) 0))
+          (else (let ((vertical-substring (list->string (make-vertical-substring str interval start))))
+                  (cons vertical-substring (go str interval (+ start 1)))))))
+  (go str 1 0))
+
+(define (vertically-equal? str sub)
+  (let ((vertical-substrings (make-vertical-substrings str)))
+    (any (lambda (vertical-substring) (equal? vertical-substring sub)) vertical-substrings)))
+
+(define (abc360b)
+  (let ((line (string-split (read-line (current-input-port))
+                            " ")))
+    (if (vertically-equal? (list-ref line 0)
+                           (list-ref line 1))
         (print "Yes")
         (print "No"))))
