@@ -13,4 +13,4 @@ jobs:
         uses: docker://practicalscheme/gauche:0.9.15
       - id: test
         name: Test the problems
-        run: gosh ./test.scm
+        run: /usr/bin/gosh ./test.scm
