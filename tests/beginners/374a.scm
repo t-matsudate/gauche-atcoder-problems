@@ -1,0 +1,10 @@
+(add-load-path "../../" :relative)
+(require "beginners/374")
+(select-module beginners.374)
+(use gauche.test)
+
+(test-start "ABC374A")
+(test* "Takahashisan" #t (aisatsu? "Takahashisan"))
+(test* "Aokikun" #f (aisatsu? "Aokikun"))
+(test* "san." #f (aisatsu? "san."))
+(test-end)

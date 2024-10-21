@@ -1,0 +1,16 @@
+name: Testing
+on: push
+jobs:
+  testing:
+    name: Testing
+    runs-on: ubuntu-latest
+    steps:
+      - id: checkout
+        name: Checkout repository
+        uses: actions/checkout@v4
+      - id: setup
+        name: Setup Gauche
+        uses: docker://practicalscheme/gauche:0.9.15
+      - id: test
+        name: Test the problems
+        run: gosh ./test.scm
