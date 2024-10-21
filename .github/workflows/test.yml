@@ -11,9 +11,9 @@ jobs:
       - id: setup
         name: Setup Gauche
         run: |
-          apt update -y
-          apt install -y build-essential libtool pkg-config curl git unzip openssh-client zlib1g-dev libmbedtls-dev ca-certificates
-          curl https://raw.githubusercontent.com/shirok/get-gauche/master/get-gauche.sh > get-gauche.sh && chmod +x get-gauche.sh && ./get-gauche.sh --prefix /usr --version 0.9.15 --auto
+          sudo apt update -y
+          sudo apt install -y build-essential libtool pkg-config curl git unzip openssh-client zlib1g-dev libmbedtls-dev ca-certificates
+          curl https://raw.githubusercontent.com/shirok/get-gauche/master/get-gauche.sh > get-gauche.sh && chmod +x get-gauche.sh && sudo ./get-gauche.sh --prefix /usr --version 0.9.15 --auto
       - id: test
         name: Test the problems
         run: /usr/bin/gosh ./test.scm
