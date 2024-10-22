@@ -1,3 +1,3 @@
 (add-load-path ".")
-(require "test/beginners/374a")
-(require "test/beginners/374b")
+(require "tests/beginners/374a")
+(require "tests/beginners/374b")
